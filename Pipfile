@@ -13,6 +13,7 @@ django = "*"
 pymongo = "*"
 dnspython = "*"
 mongoengine = "*"
+django-rest-framework-mongoengine = "*"
 
 [dev-packages]
 black = "*"
