@@ -7,3 +7,5 @@ class LocationActivity(Document):
     image_url = fields.StringField(required=True)
     city = fields.StringField(required=True)
     province = fields.StringField()
+
+    meta = {"collection": "LocationActivity"}

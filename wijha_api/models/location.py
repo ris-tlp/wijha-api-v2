@@ -6,3 +6,5 @@ class Location(Document):
     description = fields.StringField(required=True)
     image_url = fields.StringField(required=True)
     province = fields.StringField()
+
+    meta = {"collection": "Location"}
