@@ -17,6 +17,7 @@ django-rest-framework-mongoengine = "*"
 mypy = "*"
 pytest = "*"
 python-dotenv = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 black = "*"
