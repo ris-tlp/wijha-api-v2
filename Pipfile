@@ -16,6 +16,7 @@ mongoengine = "*"
 django-rest-framework-mongoengine = "*"
 mypy = "*"
 pytest = "*"
+python-dotenv = "*"
 
 [dev-packages]
 black = "*"
