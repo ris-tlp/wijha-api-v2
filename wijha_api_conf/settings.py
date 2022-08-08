@@ -10,8 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
-from pathlib import Path
 from dotenv import load_dotenv
+from pathlib import Path
+import mongoengine
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -22,6 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
+MONGO_HOST = os.environ.get("MONGO_HOST")
+MONGO_DATABASE = os.environ.get("MONGO_DATABASE")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -78,6 +81,11 @@ WSGI_APPLICATION = "wijha_api_conf.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
+
+mongoengine.connect(
+    host=MONGO_HOST,
+    db=MONGO_DATABASE,
+)
 
 DATABASES = {
     "default": {
