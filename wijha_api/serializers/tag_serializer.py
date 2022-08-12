@@ -5,4 +5,4 @@ from ..models.tag import Tag
 class TagSerializer(serializers.DocumentSerializer):
     class Meta:
         model = Tag
-        fields = "__all__"
+        fields = ["id", "title", "icon"]

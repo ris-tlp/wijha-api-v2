@@ -1,11 +1,24 @@
 from rest_framework_mongoengine import viewsets
-from ..models.tag import Tag
+from rest_framework.response import Response
+from rest_framework import mixins
+
 from ..serializers.tag_serializer import TagSerializer
+from ..models.tag import Tag
 
 
-class TagViewSet(viewsets.ModelViewSet):
-    lookup_field = "_id"
+class TagViewSet(
+    mixins.CreateModelMixin,
+    mixins.ListModelMixin,
+    mixins.RetrieveModelMixin,
+    viewsets.GenericViewSet,
+):
+    """
+    Implements List, Create and Retrieve endpoints
+    List [GET]: /tag/
+    Retrieve [GET]: /tag/<title>
+    Create [POST]: /tag/
+    """
+
     serializer_class = TagSerializer
-
-    def get_queryset(self):
-        return Tag.objects()
+    queryset = Tag.objects.all()
+    lookup_field = "title"
