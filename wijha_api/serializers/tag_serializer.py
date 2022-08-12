@@ -1,5 +1,5 @@
 from rest_framework_mongoengine import serializers
-from ..models.tag import Tag
+from wijha_api.models.tag import Tag
 
 
 class TagSerializer(serializers.DocumentSerializer):

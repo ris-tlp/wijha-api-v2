@@ -2,11 +2,11 @@ from rest_framework_mongoengine import viewsets
 from rest_framework.response import Response
 from rest_framework import mixins
 
-from wijha_api.serializers.tag_serializer import TagSerializer
-from wijha_api.models.tag import Tag
+from wijha_api.serializers.category_serializer import CategorySerializer
+from wijha_api.models.category import Category
 
 
-class TagViewSet(
+class CategoryViewSet(
     mixins.CreateModelMixin,
     mixins.ListModelMixin,
     mixins.RetrieveModelMixin,
@@ -16,6 +16,6 @@ class TagViewSet(
     Implements List, Create and Retrieve endpoints
     """
 
-    serializer_class = TagSerializer
-    queryset = Tag.objects.all()
+    serializer_class = CategorySerializer
+    queryset = Category.objects.all()
     lookup_field = "title"
