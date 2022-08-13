@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+import pprint
 from django.urls import include, path
 from rest_framework_mongoengine.routers import DefaultRouter
 from wijha_api.views import category_viewset, tag_viewset
@@ -21,6 +22,8 @@ router = DefaultRouter()
 router.register(r"tag", tag_viewset.TagViewSet, r"tag")
 router.register(r"category", category_viewset.CategoryViewSet, r"category")
 
+
+# pprint.pprint(router.get_urls())
 
 urlpatterns = [
     path("", include((router.urls))),
