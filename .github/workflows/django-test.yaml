@@ -10,6 +10,7 @@ on:
 
 jobs:
   simple_build:
+    env: ${{ secrets.ENV_SECRETS }}
     runs-on: ubuntu-latest
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
