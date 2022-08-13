@@ -9,8 +9,9 @@ on:
     branches: [main]
 
 jobs:
-  simple_build:
-    env: ${{ secrets.ENV_SECRETS }}
+  build_tests:
+    env:
+      ENV_FILE: ${{ secrets.ENV_SECRETS }}
     runs-on: ubuntu-latest
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -20,6 +21,10 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.9
+      # Setup .env file for secrets access
+      - name: Setup Env
+        run: |
+          $ENV_FILE | base64 --decode > .env
       - name: Install requirements
         run: |
           pip install pipenv
