@@ -27,9 +27,9 @@ jobs:
       - name: Create env file
         run: |
           touch .env
-          echo DJANGO_SECRET_KEY=${{ DJANGO_SECRET_KEY }} >> .env
-          echo MONGO_HOST=${{ MONGO_HOST }} >> .env
-          echo MONGO_DATABASE=${{ MONGO_DATABASE }} >> .env
+          echo DJANGO_SECRET_KEY=${{ secrets.DJANGO_SECRET_KEY }} >> .env
+          echo MONGO_HOST=${{ secrets.MONGO_HOST }} >> .env
+          echo MONGO_DATABASE=${{ secrets.MONGO_DATABASE }} >> .env
           cat .env
       - name: Install requirements
         run: |
