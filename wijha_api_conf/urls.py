@@ -16,11 +16,12 @@ Including another URLconf
 import pprint
 from django.urls import include, path
 from rest_framework_mongoengine.routers import DefaultRouter
-from wijha_api.views import category_viewset, tag_viewset
+from wijha_api.views import category_viewset, tag_viewset, tour_include_viewset
 
 router = DefaultRouter()
 router.register(r"tag", tag_viewset.TagViewSet, r"tag")
 router.register(r"category", category_viewset.CategoryViewSet, r"category")
+router.register(r"tour-include", tour_include_viewset.TourIncludeViewSet, r"tour-include")
 
 
 # pprint.pprint(router.get_urls())
