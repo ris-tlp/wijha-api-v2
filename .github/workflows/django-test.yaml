@@ -34,7 +34,7 @@ jobs:
       - name: Install requirements
         run: |
           pip install pipenv
-          pipenv lock -r > requirements.txt
+          pipenv lock --requirements > requirements.txt
           pip install -r requirements.txt
       - name: Run tests
         run: |
