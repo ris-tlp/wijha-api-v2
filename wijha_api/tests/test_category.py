@@ -1,5 +1,6 @@
 from rest_framework import status
 from rest_framework.test import APITestCase
+from wijha_api.models.category import Category
 
 
 class CategoryTests(APITestCase):
@@ -33,3 +34,9 @@ class CategoryTests(APITestCase):
         data = {"title": "category-test-new", "icon": "category-icon-test-new"}
         response = self.client.post(url, data=data, format="json")
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+
+    def tearDown(self) -> None:
+        """
+        Delete documents created for test
+        """
+        Category.objects(title="category-test-new").delete()

@@ -1,7 +1,6 @@
-import json
-from django.urls import reverse
 from rest_framework import status
 from rest_framework.test import APITestCase
+from wijha_api.models.tag import Tag
 
 
 class TagTests(APITestCase):
@@ -30,3 +29,9 @@ class TagTests(APITestCase):
         data = {"title": "tag-test-new", "icon": "tag-icon-test-new"}
         response = self.client.post(url, data=data, format="json")
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+
+    def tearDown(self) -> None:
+        """
+        Delete documents created for test
+        """
+        Tag.objects(title="tag-test-new").delete()

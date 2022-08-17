@@ -1,5 +1,6 @@
 from rest_framework import status
 from rest_framework.test import APITestCase
+from wijha_api.models.tour_include import TourInclude
 
 
 class TourIncludeTests(APITestCase):
@@ -29,7 +30,13 @@ class TourIncludeTests(APITestCase):
         """
         Ensure a new TourInclude object can be created
         """
-        url = "/category/"
+        url = "/tour-include/"
         data = {"title": "tourinclude-test-new", "icon": "tourinclude-icon-test-new"}
         response = self.client.post(url, data=data, format="json")
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+
+    def tearDown(self) -> None:
+        """
+        Delete documents created for test
+        """
+        TourInclude.objects(title="tourinclude-test-new").delete()
