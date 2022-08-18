@@ -4,10 +4,10 @@
 
 - User authentication
 
-- TDD (explore frameworks)
+- ~~TDD (explore frameworks)~~
   
 - Strongly typed with mypy
 
-- ViewSets, Routers
+- ~~ViewSets, Routers~~
 
-- Viewable API 
+- ~~Viewable API~~
