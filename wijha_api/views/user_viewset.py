@@ -1,12 +1,15 @@
+from urllib import response
 from rest_framework_mongoengine import viewsets
+from rest_framework.decorators import action
 from rest_framework.response import Response
+from mongoengine import DoesNotExist
 from rest_framework import mixins
 from rest_framework import status
 
 
 from wijha_api.serializers.user_serializer import UserSerializer
-from wijha_api.models.user import *
 from wijha_api.utils.password_hashing import *
+from wijha_api.models.user import *
 
 
 class UserViewSet(
@@ -38,3 +41,16 @@ class UserViewSet(
             return Response(status=status.HTTP_201_CREATED)
         except Exception as e:
             return Response(status=status.HTTP_406_NOT_ACCEPTABLE)
+
+    @action(detail=False, methods=["post"])
+    def validate_password(self, request):
+        """
+        Serves as an endpoint to validate passwords upon user login
+        @TODO Decrypt client-side encrypted password first
+        """
+        try:
+            user_data = User.objects(username=request.data["username"]).get()
+            if check_password(request.data["password"], user_data["password"]):
+                return Response(status=status.HTTP_200_OK)
+        except DoesNotExist as e:
+            return Response(status=status.HTTP_404_NOT_FOUND, data={"Reason": "User not found"})
