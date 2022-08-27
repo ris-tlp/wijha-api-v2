@@ -8,6 +8,14 @@ Anything within `<this>` is user input.
 | `/user/`                     | Create a new user.                                                 | `POST`           |
 | `/user/validate_password/`   | Validates entered password with password stored in DB.             | `POST`           |
 
+### Subforum
+| Endpoint                     | Description                                                        | Type             |
+|------------------------------|--------------------------------------------------------------------|------------------|
+| `/subforum/`                 | Get all the subforums .                                            | `GET`            |
+| `/subforum/<subforum_title>/`| Get a subforum by its title.                                       | `GET`            |
+| `/subforum/`                 | Create a new subforum.                                             | `POST`           |
+
+
 ### Category
 | Endpoint                     | Description                                                        | Type             |
 |------------------------------|--------------------------------------------------------------------|------------------|
