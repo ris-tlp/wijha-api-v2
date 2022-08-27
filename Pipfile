@@ -18,6 +18,7 @@ mypy = "*"
 pytest = "*"
 python-dotenv = "*"
 django-cors-headers = "*"
+py-bcrypt = "*"
 
 [dev-packages]
 black = "*"
