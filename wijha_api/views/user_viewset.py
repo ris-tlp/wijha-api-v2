@@ -1,3 +1,4 @@
+from os import stat
 from urllib import response
 from rest_framework_mongoengine import viewsets
 from rest_framework.decorators import action
@@ -52,5 +53,7 @@ class UserViewSet(
             user_data = User.objects(username=request.data["username"]).get()
             if check_password(request.data["password"], user_data["password"]):
                 return Response(status=status.HTTP_200_OK)
+            else:
+                return Response(status=status.HTTP_406_NOT_ACCEPTABLE)
         except DoesNotExist as e:
             return Response(status=status.HTTP_404_NOT_FOUND, data={"Reason": "User not found"})
