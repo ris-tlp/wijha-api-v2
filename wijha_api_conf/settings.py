@@ -82,10 +82,7 @@ WSGI_APPLICATION = "wijha_api_conf.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-mongoengine.connect(
-    host=MONGO_HOST,
-    db=MONGO_DATABASE,
-)
+mongoengine.connect(host=MONGO_HOST, db=MONGO_DATABASE, alias="default")
 
 DATABASES = {
     "default": {
