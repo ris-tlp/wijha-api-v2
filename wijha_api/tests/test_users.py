@@ -30,15 +30,27 @@ class TagTests(APITestCase):
         response = self.client.post(url, data=data, format="json")
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
-    def test_validate_password(self):
+    def test_validate_correct_password(self):
         """
         Validate a user's password on login
         @TODO decrypt client-side encrypted password
         """
         url = "/user/validate_password/"
+
         data = {"username": "omar", "password": "password"}
         response = self.client.post(url, data=data, format="json")
         self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+    def test_validate_incorrect_password(self):
+        """
+        Ensure an incorrect password is not validated.
+        @TODO decrypt client-side encrypted password
+        """
+        url = "/user/validate_password/"
+
+        data = {"username": "omar", "password": "wrong-password"}
+        response = self.client.post(url, data=data, format="json")
+        self.assertEqual(response.status_code, status.HTTP_406_NOT_ACCEPTABLE)
 
     def tearDown(self):
         """
