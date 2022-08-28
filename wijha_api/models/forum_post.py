@@ -11,5 +11,6 @@ class ForumPost(Document):
     likes = fields.IntField()
     tags = fields.ListField(fields.ReferenceField(Tag))
     subforum = fields.ReferenceField(Subforum)
+    parent_post = fields.ReferenceField("self")
 
     meta = {"collection": "ForumPost"}

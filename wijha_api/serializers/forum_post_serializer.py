@@ -6,4 +6,4 @@ class ForumPostSerializer(serializers.DocumentSerializer):
     class Meta:
         model = ForumPost
         depth = 2
-        fields = ["id", "title", "content", "likes", "author", "tags"]
+        fields = ["id", "title", "content", "likes", "author", "tags", "parent_post"]
