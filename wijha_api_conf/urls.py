@@ -19,6 +19,7 @@ from django.urls import include, path
 from rest_framework_mongoengine.routers import DefaultRouter
 from wijha_api.views import (
     category_viewset,
+    custom_location_viewset,
     tag_viewset,
     tour_include_viewset,
     user_viewset,
@@ -35,6 +36,9 @@ router.register(r"user", user_viewset.UserViewSet, r"user")
 router.register(r"subforum", subforum_viewset.SubforumViewSet, r"subforum")
 router.register(r"forum-post", forum_post_viewset.ForumPostViewSet, r"forum-post")
 router.register(r"location", location_viewset.LocationViewSet, r"location")
+router.register(
+    r"custom-location", custom_location_viewset.CustomLocationViewSet, r"custom-location"
+)
 
 # pprint.pprint(router.get_urls())
 
