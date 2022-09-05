@@ -25,9 +25,16 @@ Anything within `<this>` is user input.
 ### Location
 | Endpoint                     | Description                                                        | Type             |
 |------------------------------|--------------------------------------------------------------------|------------------|
-| `/location/`                 | Get all the location.                                              | `GET`            |
+| `/location/`                 | Get all the locations.                                              | `GET`            |
 | `/location/<location_name>/` | Get a location by its name.                                        | `GET`            |
 | `/location/`                 | Create a new location.                                             | `POST`           |
+
+### Custom Location
+| Endpoint                     | Description                                                        | Type             |
+|------------------------------|--------------------------------------------------------------------|------------------|
+| `/custom-location/`                 | Get all the custom locations.                                      | `GET`            |
+| `/custom-location/<location_name>/` | Get a location by its name.                                        | `GET`            |
+| `/custom-location/`                 | Create a new location.                                             | `POST`           |
 
 ### Category
 | Endpoint                     | Description                                                        | Type             |
