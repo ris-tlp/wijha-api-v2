@@ -22,6 +22,12 @@ Anything within `<this>` is user input.
 | `/forum-post/<forum_post_title>/`| Get a forum post by its title.                                 | `GET`            |
 | `/forum-post/`                 | Create a new forum post.                                         | `POST`           |
 
+### Location
+| Endpoint                     | Description                                                        | Type             |
+|------------------------------|--------------------------------------------------------------------|------------------|
+| `/location/`                 | Get all the location.                                              | `GET`            |
+| `/location/<location_name>/` | Get a location by its name.                                        | `GET`            |
+| `/location/`                 | Create a new location.                                             | `POST`           |
 
 ### Category
 | Endpoint                     | Description                                                        | Type             |
