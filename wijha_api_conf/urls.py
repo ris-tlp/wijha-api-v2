@@ -18,6 +18,7 @@ import pprint
 from django.urls import include, path
 from rest_framework_mongoengine.routers import DefaultRouter
 from wijha_api.views import (
+    blog_post_viewset,
     category_viewset,
     custom_location_viewset,
     tag_viewset,
@@ -39,6 +40,7 @@ router.register(r"location", location_viewset.LocationViewSet, r"location")
 router.register(
     r"custom-location", custom_location_viewset.CustomLocationViewSet, r"custom-location"
 )
+router.register(r"blog-post", blog_post_viewset.BlogPostViewSet, r"blog-post")
 
 # pprint.pprint(router.get_urls())
 
