@@ -24,6 +24,7 @@ from wijha_api.views import (
     user_viewset,
     subforum_viewset,
     forum_post_viewset,
+    location_viewset,
 )
 
 router = DefaultRouter()
@@ -33,7 +34,7 @@ router.register(r"tour-include", tour_include_viewset.TourIncludeViewSet, r"tour
 router.register(r"user", user_viewset.UserViewSet, r"user")
 router.register(r"subforum", subforum_viewset.SubforumViewSet, r"subforum")
 router.register(r"forum-post", forum_post_viewset.ForumPostViewSet, r"forum-post")
-
+router.register(r"location", location_viewset.LocationViewSet, r"location")
 
 # pprint.pprint(router.get_urls())
 
