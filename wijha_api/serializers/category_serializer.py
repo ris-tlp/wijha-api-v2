@@ -6,3 +6,5 @@ class CategorySerializer(serializers.DocumentSerializer):
     class Meta:
         model = Category
         fields = ["id", "title", "icon"]
+
+        # extra_kwargs = {"id": {"read_only": False}}

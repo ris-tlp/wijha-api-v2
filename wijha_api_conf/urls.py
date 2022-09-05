@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+import io
 import pprint
 from django.urls import include, path
 from rest_framework_mongoengine.routers import DefaultRouter
@@ -40,13 +41,74 @@ urlpatterns = [
     path("", include((router.urls))),
 ]
 
-from wijha_api.serializers.forum_post_serializer import ForumPostSerializer
+#############
+###TESTING###
+#############
 
-# user = User.objects(username="omar").get()
-# tag1 = Tag.objects(title="tag-test").get()
-# tag2 = Tag.objects(title="title1-test-bruh").get()
-# post = ForumPost(title="title", content="content", likes=4, author=user, tags=[tag1, tag2]).save()
-# post = ForumPost.objects(title="title").get()
-# serializer = ForumPostSerializer(post).data
-# print(serializer)
-# print(post.author)
+
+# from wijha_api.serializers.forum_post_serializer import ForumPostSerializer
+# from wijha_api.models.forum_post import ForumPost
+# from wijha_api.models.subforum import Subforum
+# from wijha_api.models.user import User
+# from wijha_api.models.tag import Tag
+
+# # user = User.objects(username="omar").get()
+# # tag1 = Tag.objects(title="tag-test").get()
+# # tag2 = Tag.objects(title="title1-test-bruh").get()
+# # subforum = Subforum.objects(title="subforum-test").get()
+# # post = ForumPost(
+# #     title="title", content="content", likes=4, author=user, tags=[tag1, tag2], subforum=subforum
+# # ).save()
+# # comment = ForumPost(
+# #     title="comment title",
+# #     content="comment content",
+# #     likes=0,
+# #     author=user,
+# #     tags=[tag1],
+# #     subforum=subforum,
+# #     parent_post=post,
+# # ).save()
+
+# # post = ForumPost.objects(title="comment title").get()
+# # serializer = ForumPostSerializer(post).data
+# # print(serializer)
+# # # print(post.author)
+
+
+# from wijha_api.serializers.user_serializer import UserSerializer
+# from wijha_api.serializers.tag_serializer import TagSerializer
+# from wijha_api.serializers.subforum_serializer import SubforumSerializer
+# from rest_framework.renderers import JSONRenderer
+# from rest_framework.parsers import JSONParser
+
+
+# # user = User.objects(username="omar").get()
+# # tag1 = Tag.objects(title="tag-test").get()
+# # subforum = Subforum.objects(title="subforum-test").get()
+# # post_data = ForumPost(
+# #     title="forum-post-title-test-new",
+# #     content="forum-post-title-test-content",
+# #     likes=0,
+# #     author=user,
+# #     tags=[tag1],
+# #     subforum=subforum,
+# #     parent_post=None,
+# # ).save()
+
+
+# post_data = ForumPost.objects(title="forum-post-title-test-new").get()
+# serialized_data = ForumPostSerializer(post_data).data
+
+# json = JSONRenderer().render(serialized_data)
+# stream = io.BytesIO(json)
+# data = JSONParser().parse(stream)
+
+# # print(data)
+# # print(type(data))
+
+# serializer = ForumPostSerializer(data=data)
+# print(f"Serializer valid: {serializer.is_valid()}")
+# print(serializer.validated_data)
+
+# # s = ForumPostSerializer()
+# # print(repr(s))

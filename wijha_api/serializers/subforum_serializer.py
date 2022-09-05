@@ -6,3 +6,5 @@ class SubforumSerializer(serializers.DocumentSerializer):
     class Meta:
         model = Subforum
         fields = ["id", "title", "description", "icon", "total_posts"]
+
+        # extra_kwargs = {"id": {"read_only": False}}

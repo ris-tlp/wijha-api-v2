@@ -6,3 +6,5 @@ class TagSerializer(serializers.DocumentSerializer):
     class Meta:
         model = Tag
         fields = ["id", "title", "icon"]
+
+        # extra_kwargs = {"id": {"read_only": False}}
