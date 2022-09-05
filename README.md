@@ -4,16 +4,23 @@ Anything within `<this>` is user input.
 ### User
 | Endpoint                     | Description                                                        | Type             |
 |------------------------------|--------------------------------------------------------------------|------------------|
-| `/user/<username>/`           | Get a user by its username.                                        | `GET`            |
+| `/user/<username>/`          | Get a user by its username.                                        | `GET`            |
 | `/user/`                     | Create a new user.                                                 | `POST`           |
 | `/user/validate_password/`   | Validates entered password with password stored in DB.             | `POST`           |
 
 ### Subforum
 | Endpoint                     | Description                                                        | Type             |
 |------------------------------|--------------------------------------------------------------------|------------------|
-| `/subforum/`                 | Get all the subforums .                                            | `GET`            |
+| `/subforum/`                 | Get all the subforums.                                            | `GET`            |
 | `/subforum/<subforum_title>/`| Get a subforum by its title.                                       | `GET`            |
 | `/subforum/`                 | Create a new subforum.                                             | `POST`           |
+
+### ForumPost
+| Endpoint                     | Description                                                        | Type             |
+|------------------------------|--------------------------------------------------------------------|------------------|
+| `/forum-post/`                 | Get all the forum posts.                                         | `GET`            |
+| `/forum-post/<forum_post_title>/`| Get a forum post by its title.                                 | `GET`            |
+| `/forum-post/`                 | Create a new forum post.                                         | `POST`           |
 
 
 ### Category
