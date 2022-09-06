@@ -17,12 +17,14 @@ import io
 import pprint
 from django.urls import include, path
 from rest_framework_mongoengine.routers import DefaultRouter
+from wijha_api import models
 from wijha_api.views import (
     blog_post_viewset,
     category_viewset,
     custom_location_viewset,
     tag_viewset,
     tour_include_viewset,
+    tour_viewset,
     user_viewset,
     subforum_viewset,
     forum_post_viewset,
@@ -41,6 +43,7 @@ router.register(
     r"custom-location", custom_location_viewset.CustomLocationViewSet, r"custom-location"
 )
 router.register(r"blog-post", blog_post_viewset.BlogPostViewSet, r"blog-post")
+router.register(r"tour", tour_viewset.TourViewSet, r"tour")
 
 # pprint.pprint(router.get_urls())
 
@@ -52,11 +55,42 @@ urlpatterns = [
 ###TESTING###
 #############
 
+###############
+# TOUR CREATION#
+###############
+
+# from wijha_api.models.tour import Tour
+# from wijha_api.models.user import User
+# from wijha_api.models.location import Location
+# from wijha_api.models.category import Category
+# from wijha_api.models.tour_include import TourInclude
+# from datetime import datetime
+
+# user = User.objects(username="omar").get()
+# province = Location.objects(name="location-test").get()
+# category1 = Category.objects(title="category1").get()
+# include1 = TourInclude.objects(title="tourinclude-test").get()
+
+# tour = Tour(
+#     title="tour_test",
+#     description="tour_description",
+#     capacity=5,
+#     rating=4.5,
+#     price=1500,
+#     date=datetime.now(),
+#     active=False,
+#     history=False,
+#     guide=user,
+#     province=province,
+#     images=["image1", "image2"],
+#     categories=[category1],
+#     locations=[],
+#     included=[include1],
+# ).save()
 
 # from wijha_api.serializers.forum_post_serializer import ForumPostSerializer
 # from wijha_api.models.forum_post import ForumPost
 # from wijha_api.models.subforum import Subforum
-# from wijha_api.models.user import User
 # from wijha_api.models.tag import Tag
 
 # # user = User.objects(username="omar").get()
