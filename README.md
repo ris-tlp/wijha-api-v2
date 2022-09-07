@@ -57,6 +57,13 @@ Anything within `<this>` is user input.
 | `/category/<category_title>/` | Get a category by its title.                                       | `GET`            |
 | `/category/`                 | Create a new category.                                             | `POST`           |
 
+### Tour
+| Endpoint                     | Description                                                        | Type             |
+|------------------------------|--------------------------------------------------------------------|------------------|
+| `/tour/`                 | Get all the tours.                                            | `GET`            |
+| `/tour/<tour_name>/`     | Get a tour by its name.                                       | `GET`            |
+| `/tour/`                 | Create a new tour.                                             | `POST`           |
+
 ### Tag
 | Endpoint                | Description                                                             | Type             |
 |-------------------------|-------------------------------------------------------------------------|------------------|
