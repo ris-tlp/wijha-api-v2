@@ -15,14 +15,14 @@ Anything within `<this>` is user input.
 | `/subforum/<subforum_title>/`| Get a subforum by its title.                                       | `GET`            |
 | `/subforum/`                 | Create a new subforum.                                             | `POST`           |
 
-### ForumPost
+### Forum Post
 | Endpoint                     | Description                                                        | Type             |
 |------------------------------|--------------------------------------------------------------------|------------------|
 | `/forum-post/`                 | Get all the forum posts.                                         | `GET`            |
 | `/forum-post/<forum_post_title>/`| Get a forum post by its title.                                 | `GET`            |
 | `/forum-post/`                 | Create a new forum post.                                         | `POST`           |
 
-### BlogPost
+### Blog Post
 | Endpoint                     | Description                                                        | Type             |
 |------------------------------|--------------------------------------------------------------------|------------------|
 | `/blog-post/`                | Get all the blog posts.                                            | `GET`            |
@@ -43,12 +43,26 @@ Anything within `<this>` is user input.
 | `/custom-location/<location_name>/` | Get a location by its name.                                        | `GET`            |
 | `/custom-location/`                 | Create a new location.                                             | `POST`           |
 
+### Ordered Locaton
+| Endpoint                     | Description                                                        | Type             |
+|------------------------------|--------------------------------------------------------------------|------------------|
+| `/ordered-location/`                 | Get all the ordered locations.                             | `GET`            |
+| `/ordered-location/<location_name>/` | Get an ordered location by its name.                       | `GET`            |
+| `/ordered-location/`                 | Create a new ordered location.                             | `POST`           |
+
 ### Category
 | Endpoint                     | Description                                                        | Type             |
 |------------------------------|--------------------------------------------------------------------|------------------|
 | `/category/`                 | Get all the categories.                                            | `GET`            |
 | `/category/<category_title>/` | Get a category by its title.                                       | `GET`            |
 | `/category/`                 | Create a new category.                                             | `POST`           |
+
+### Tour
+| Endpoint                     | Description                                                        | Type             |
+|------------------------------|--------------------------------------------------------------------|------------------|
+| `/tour/`                 | Get all the tours.                                            | `GET`            |
+| `/tour/<tour_name>/`     | Get a tour by its name.                                       | `GET`            |
+| `/tour/`                 | Create a new tour.                                             | `POST`           |
 
 ### Tag
 | Endpoint                | Description                                                             | Type             |
