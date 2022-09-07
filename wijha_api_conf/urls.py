@@ -22,6 +22,7 @@ from wijha_api.views import (
     blog_post_viewset,
     category_viewset,
     custom_location_viewset,
+    ordered_location_viewset,
     tag_viewset,
     tour_include_viewset,
     tour_viewset,
@@ -39,11 +40,14 @@ router.register(r"user", user_viewset.UserViewSet, r"user")
 router.register(r"subforum", subforum_viewset.SubforumViewSet, r"subforum")
 router.register(r"forum-post", forum_post_viewset.ForumPostViewSet, r"forum-post")
 router.register(r"location", location_viewset.LocationViewSet, r"location")
+router.register(r"blog-post", blog_post_viewset.BlogPostViewSet, r"blog-post")
+router.register(r"tour", tour_viewset.TourViewSet, r"tour")
+router.register(
+    r"ordered-location", ordered_location_viewset.OrderedLocationViewSet, r"ordered-location"
+)
 router.register(
     r"custom-location", custom_location_viewset.CustomLocationViewSet, r"custom-location"
 )
-router.register(r"blog-post", blog_post_viewset.BlogPostViewSet, r"blog-post")
-router.register(r"tour", tour_viewset.TourViewSet, r"tour")
 
 # pprint.pprint(router.get_urls())
 
