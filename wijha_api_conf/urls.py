@@ -13,11 +13,9 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-import io
 import pprint
 from django.urls import include, path
 from rest_framework_mongoengine.routers import DefaultRouter
-from wijha_api import models
 from wijha_api.views import (
     blog_post_viewset,
     category_viewset,
@@ -30,6 +28,7 @@ from wijha_api.views import (
     subforum_viewset,
     forum_post_viewset,
     location_viewset,
+    upload_image_view,
 )
 
 router = DefaultRouter()
@@ -53,6 +52,7 @@ router.register(
 
 urlpatterns = [
     path("", include((router.urls))),
+    path(r"upload-image/", upload_image_view.upload_image, name="upload-image"),
 ]
 
 #############
