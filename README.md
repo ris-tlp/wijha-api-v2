@@ -1,3 +1,7 @@
+# Run API
+1. Build Docker image: `docker build -t wijha-api-v2 Dockerfile .`
+2. Run API: `docker run -d -p 8000:8000 wijha-api-v2`
+
 # API Endpoints
 Anything within `<this>` is user input.
 
