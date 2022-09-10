@@ -14,6 +14,7 @@ jobs:
       DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
       MONGO_HOST: ${{ secrets.MONGO_HOST }}
       MONGO_DATABASE: ${{ secrets.MONGO_DATABASE }}
+      S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME}}
     runs-on: ubuntu-latest
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -30,6 +31,7 @@ jobs:
           echo DJANGO_SECRET_KEY=${{ secrets.DJANGO_SECRET_KEY }} >> .env
           echo MONGO_HOST=${{ secrets.MONGO_HOST }} >> .env
           echo MONGO_DATABASE=${{ secrets.MONGO_DATABASE }} >> .env
+          echo S3_BUCKET_NAME=${{ secrets.S3_BUCKET_NAME }} >> .env
       - name: Install requirements
         run: |
           pip install pipenv
