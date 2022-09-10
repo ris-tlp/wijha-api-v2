@@ -19,6 +19,7 @@ pytest = "*"
 python-dotenv = "*"
 django-cors-headers = "*"
 py-bcrypt = "*"
+boto3 = "*"
 
 [dev-packages]
 black = "*"
