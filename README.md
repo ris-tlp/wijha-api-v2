@@ -1,6 +1,11 @@
 # API Endpoints
 Anything within `<this>` is user input.
 
+### Misc
+| Endpoint                     | Description                                                        | Type             |
+|------------------------------|--------------------------------------------------------------------|------------------|
+| `/upload-image/`             | Uploads an image to the desginated S3 bucket and returns the public URL                                        | `POST`            |
+
 ### User
 | Endpoint                     | Description                                                        | Type             |
 |------------------------------|--------------------------------------------------------------------|------------------|
