@@ -8,6 +8,11 @@ variable "bucket_prefix" {
   default = "wijha-"
 }
 
+variable "lambda_bucket_prefix" {
+  type    = string
+  default = "lambda-wijha-"
+}
+
 variable "versioning" {
   type    = string
   default = "Enabled"
