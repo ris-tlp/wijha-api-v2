@@ -29,7 +29,7 @@ MONGO_DATABASE = os.environ.get("MONGO_DATABASE")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["0.0.0.0", "127.0.0.1"]
 
 
 # Application definition
@@ -84,12 +84,12 @@ WSGI_APPLICATION = "wijha_api_conf.wsgi.application"
 
 mongoengine.connect(host=MONGO_HOST, db=MONGO_DATABASE)
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
-}
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
+#     }
+# }
 
 
 # Password validation

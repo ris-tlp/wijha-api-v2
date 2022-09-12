@@ -1,10 +1,14 @@
-FROM python:3.9
+FROM mlupin/docker-lambda:python3.9-build
 
-WORKDIR /wijha-api-v2/
-COPY . /wijha-api-v2/
+# Make this the default working directory
+WORKDIR /var/task
 
+# Expose tcp network port 8000 for debugging
+EXPOSE 8000
+
+# Install dependencies
 RUN pip install pipenv
-RUN pipenv requirements > requirements.txt
+RUN python -m pipenv requirements > requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-CMD ["gunicorn", "wijha_api_conf.wsgi"]
+CMD ["bash"]
