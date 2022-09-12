@@ -20,6 +20,7 @@ python-dotenv = "*"
 django-cors-headers = "*"
 py-bcrypt = "*"
 boto3 = "*"
+zappa = "*"
 
 [dev-packages]
 black = "*"
