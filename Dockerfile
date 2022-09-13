@@ -1,4 +1,5 @@
-FROM amazon/aws-lambda-python:3.9.2022.09.09.11
+FROM amazon/aws-lambda-python:3.9.2022.09.08.17
+# FROM amazon/aws-lambda-python:3.8
 
 ARG FUNCTION_DIR="/var/task/"
 

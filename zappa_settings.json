@@ -5,8 +5,6 @@
         "profile_name": "default",
         "project_name": "wijha-api-v2",
         "runtime": "python3.9",
-        "s3_bucket": "lambda-wijha-20220912144315495400000001",
-        "slim_handler": true,
-        "exclude": [".git", ".github", "db.sqlite3"]
+        "s3_bucket": "lambda-wijha-20220912144315495400000001"
     }
 }

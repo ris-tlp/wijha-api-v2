@@ -1,3 +1,4 @@
+from django.test import tag
 from rest_framework import status
 from rest_framework.test import APITestCase
 from wijha_api.models.user import User
@@ -41,6 +42,7 @@ class TagTests(APITestCase):
         response = self.client.post(url, data=data, format="json")
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
+    @tag("skip")
     def test_validate_incorrect_password(self):
         """
         Ensure an incorrect password is not validated.

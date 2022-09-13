@@ -32,7 +32,7 @@ MONGO_DATABASE = os.environ.get("MONGO_DATABASE")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["0.0.0.0"]
+ALLOWED_HOSTS = ["0.0.0.0", "zappa"]
 
 # Application definition
 INSTALLED_APPS = [
