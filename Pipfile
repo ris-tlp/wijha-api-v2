@@ -4,7 +4,6 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-gunicorn = "*"
 requests = "*"
 djangorestframework = "*"
 markdown = "*"
@@ -14,11 +13,7 @@ pymongo = "*"
 dnspython = "*"
 mongoengine = "*"
 django-rest-framework-mongoengine = "*"
-mypy = "*"
-pytest = "*"
 python-dotenv = "*"
-django-cors-headers = "*"
-py-bcrypt = "*"
 boto3 = "*"
 zappa = "*"
 

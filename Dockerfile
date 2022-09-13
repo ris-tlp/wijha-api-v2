@@ -1,14 +1,21 @@
-FROM mlupin/docker-lambda:python3.9-build
+FROM amazon/aws-lambda-python:3.9.2022.09.09.11
 
-# Make this the default working directory
-WORKDIR /var/task
+ARG FUNCTION_DIR="/var/task/"
 
-# Expose tcp network port 8000 for debugging
-EXPOSE 8000
+COPY ./ ${FUNCTION_DIR}
 
-# Install dependencies
+# Dependencies
+RUN pip install --upgrade pip
 RUN pip install pipenv
-RUN python -m pipenv requirements > requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pipenv requirements > requirements.txt
+RUN pip install --user --upgrade -r requirements.txt
 
-CMD ["bash"]
+# Grab the zappa handler.py and put it in the working directory
+RUN ZAPPA_HANDLER_PATH=$( \
+    python -c "from zappa import handler; print (handler.__file__)" \
+    ) \
+    && echo $ZAPPA_HANDLER_PATH \
+    && cp $ZAPPA_HANDLER_PATH ${FUNCTION_DIR}
+
+
+CMD [ "handler.lambda_handler" ]
