@@ -16,6 +16,7 @@ django-rest-framework-mongoengine = "*"
 python-dotenv = "*"
 boto3 = "*"
 zappa = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 black = "*"
