@@ -33,7 +33,8 @@ class UserViewSet(
         try:
             User(
                 username=request.data["username"],
-                password=get_hashed_password(request.data["password"]),
+                # password=get_hashed_password(request.data["password"]),
+                password=request.data["password"],
                 profile_picture=request.data["profile_picture"],
                 travel_points=request.data["travel_points"],
                 user_type=request.data["user_type"],
@@ -51,7 +52,8 @@ class UserViewSet(
         """
         try:
             user_data = User.objects(username=request.data["username"]).get()
-            if check_password(request.data["password"], user_data["password"]):
+            # if check_password(request.data["password"], user_data["password"]):
+            if request.data["password"] == user_data["password"]:
                 return Response(status=status.HTTP_200_OK)
             else:
                 return Response(status=status.HTTP_406_NOT_ACCEPTABLE)
