@@ -86,12 +86,12 @@ WSGI_APPLICATION = "wijha_api_conf.wsgi.application"
 
 mongoengine.connect(host=MONGO_HOST, db=MONGO_DATABASE)
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": BASE_DIR / "db.sqlite3",
-#     }
-# }
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+    }
+}
 
 
 # Password validation
