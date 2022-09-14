@@ -1,22 +1,14 @@
-FROM amazon/aws-lambda-python:3.9.2022.09.08.17
-# FROM amazon/aws-lambda-python:3.8
+FROM python:3.9-slim
 
-ARG FUNCTION_DIR="/var/task/"
-
-COPY ./ ${FUNCTION_DIR}
+WORKDIR /wijha-api-v2/
+COPY . /wijha-api-v2/
 
 # Dependencies
 RUN pip install --upgrade pip
 RUN pip install pipenv
 RUN pipenv requirements > requirements.txt
-RUN pip install --user --upgrade -r requirements.txt
+RUN pip install --user -r requirements.txt
 
-# Grab the zappa handler.py and put it in the working directory
-RUN ZAPPA_HANDLER_PATH=$( \
-    python -c "from zappa import handler; print (handler.__file__)" \
-    ) \
-    && echo $ZAPPA_HANDLER_PATH \
-    && cp $ZAPPA_HANDLER_PATH ${FUNCTION_DIR}
+EXPOSE 8081
 
-
-CMD [ "handler.lambda_handler" ]
+CMD [ "python", "-m", "gunicorn", "-b", "0.0.0.0:8081", "wijha_api_conf.wsgi" ]
