@@ -1,8 +1,13 @@
-resource "aws_ecr_repository" "wijha-docker-repo" {
-  name                 = "wijha-docker-repo"
-  image_tag_mutability = "MUTABLE"
+resource "aws_ecrpublic_repository" "wijha-docker-repo" {
+  provider = aws.us_east_1
 
-  image_scanning_configuration {
-    scan_on_push = true
+  repository_name = "wijha-docker-repo"
+
+  catalog_data {
+    about_text = "All docker images involved with wijha backend"
+  }
+
+  tags = {
+    env = "dev"
   }
 }
