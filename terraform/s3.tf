@@ -1,20 +1,10 @@
 resource "aws_s3_bucket" "wijha-bucket" {
   bucket_prefix = var.bucket_prefix
-}
-
-resource "aws_s3_bucket" "lambda-wijha-bucket" {
-  bucket_prefix = var.lambda_bucket_prefix
+  force_destroy = true
 }
 
 resource "aws_s3_bucket_versioning" "wijha-bucket-versioning" {
   bucket = aws_s3_bucket.wijha-bucket.id
-  versioning_configuration {
-    status = var.versioning
-  }
-}
-
-resource "aws_s3_bucket_versioning" "lambda-wijha-bucket-versioning" {
-  bucket = aws_s3_bucket.lambda-wijha-bucket.id
   versioning_configuration {
     status = var.versioning
   }
