@@ -1,3 +1,8 @@
+# Requirements
+1. AWS CLI configured with IAM credentials and sufficient policies.
+2. Terraform for AWS infrastructure provisioning.
+3. Docker
+
 # Architecture
 ![Architecture](https://raw.githubusercontent.com/wijha/wijha-api-v2/main/architecture/architecture.jpeg?token=GHSAT0AAAAAABWVQKIMWXWB3Z7VBMQ42DBUYZD2ASA)
 
@@ -86,17 +91,3 @@ Anything within `<this>` is user input.
 | `/tour_include/`                     | Get all the TourInclude tags.                              | `GET`            |
 | `/tour_include/<tour_include_title>/` | Get a TourInclude tag by its title.                        | `GET`            |
 | `/tour_include/`                     | Create a new TourInclude.                                  | `POST`           |
-
-# TODO
-
-- User authentication
-
-- ~~TDD (explore frameworks)~~
-
-- ~~Password hashing~~
-  
-- Strongly typed with mypy
-
-- ~~ViewSets, Routers~~
-
-- ~~Viewable API~~
