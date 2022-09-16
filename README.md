@@ -1,6 +1,6 @@
-# Run API
-1. Build Docker image: `docker build -t wijha-api-v2 Dockerfile .`
-2. Run API: `docker run -d -p 8000:8000 wijha-api-v2`
+# Architecture
+![Architecture](https://raw.githubusercontent.com/wijha/wijha-api-v2/main/architecture/architecture.jpeg?token=GHSAT0AAAAAABWVQKIMWXWB3Z7VBMQ42DBUYZD2ASA)
+
 
 # API Endpoints
 Anything within `<this>` is user input.
