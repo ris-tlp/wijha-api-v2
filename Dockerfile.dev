@@ -1,0 +1,15 @@
+# Only build dependencies and attach cwd at runtime
+FROM python:3.9-slim
+
+COPY /Pipfile /Pipfile
+COPY /Pipfile.lock /Pipfile.lock
+
+# Dependencies
+RUN pip install --upgrade pip
+RUN pip install pipenv
+RUN pipenv requirements > requirements.txt
+RUN pip install --user -r requirements.txt
+
+EXPOSE 8081
+
+CMD [ "bash" ]
