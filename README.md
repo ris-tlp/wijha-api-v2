@@ -4,7 +4,7 @@
 3. Docker
 
 # Architecture
-![Architecture](https://raw.githubusercontent.com/wijha/wijha-api-v2/main/architecture/architecture.jpeg?token=GHSAT0AAAAAABWVQKIMWXWB3Z7VBMQ42DBUYZD2ASA)
+![Architecture](https://raw.githubusercontent.com/ris-tlp/wijha-api-v2/refs/heads/main/architecture/architecture.jpeg)
 
 
 # API Endpoints
