@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "100807376506",
+    "project_id": "wijha-417",
+    "storage_bucket": "wijha-417.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:100807376506:android:a372d016198a6b275c45c3",
+        "android_client_info": {
+          "package_name": "com.example.wijha"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "100807376506-u9bqgsrtg5tbj5221s88rbd6u4duotfh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGZxhDyDCf-yDAMFJXp8TkYDw1NIG-Uao"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "100807376506-u9bqgsrtg5tbj5221s88rbd6u4duotfh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
