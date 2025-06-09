@@ -1,13 +1,25 @@
-# Requirements
+# Wijha UI Samples
+![image](https://github.com/user-attachments/assets/2cf56658-c722-49df-ac71-9383514a0c1b)  
+
+![image](https://github.com/user-attachments/assets/e1f7c446-0783-4f4a-b761-028a5e075a4f)  
+
+![image](https://github.com/user-attachments/assets/c1d7afa3-df18-4a34-9ce1-198c1a3096db)
+
+![image](https://github.com/user-attachments/assets/77649238-2c47-49e1-a280-35a41d30e742)
+
+
+# Wijha API
+
+## Requirements
 1. AWS CLI configured with IAM credentials and sufficient policies.
 2. Terraform for AWS infrastructure provisioning.
 3. Docker
 
-# Architecture
-![Architecture](https://raw.githubusercontent.com/ris-tlp/wijha-api-v2/refs/heads/main/architecture/architecture.jpeg)
+## Architecture
+![Architecture](https://raw.githubusercontent.com/ris-tlp/wijha-api-v2/refs/heads/main/api/architecture/architecture.jpeg)
 
 
-# API Endpoints
+## API Endpoints
 Anything within `<this>` is user input.
 
 ### Misc
